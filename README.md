@@ -17,7 +17,4 @@ testing slimci/continuous integration setup in dbt cloud
  - setup (guide)[https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup]
 
 ## project package management
- - we will use pip to manage packages 
- - PIP is a powerful package management system used to install and manage software packages and libraries written in Python. PIP stands for “Preferred Installer Program” or “Pip Installs Packages.” To use PIP, you must install Python on your Windows machine.
- - ```python -m pip install dbt-core dbt-snowflake```
-
+ - we will solely use the dbt cloud ide to maintain the project and all integrations
