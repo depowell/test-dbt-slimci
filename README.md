@@ -12,9 +12,10 @@ testing slimci/continuous integration setup in dbt cloud
     - You have Advance CI features enabled.
     - You use a supported data platform: BigQuery, Databricks, Postgres, or Snowflake. Support for additional data platforms coming soon.
 
-## data warehouse
- - we will use snowflake cloud data warehouse hosted on aws
- - setup (guide)[https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup]
-
-## project package management
+## project package management & integrations
  - we will solely use the dbt cloud ide to maintain the project and all integrations
+ - remote is github
+ - data warehouse is snowflake
+
+## ci job
+when using/setting up ci jobs in dbt cloud we need to run a deploy job first since initially it has no runs to compare against unless you do so.
