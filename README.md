@@ -19,8 +19,10 @@ testing slimci/continuous integration setup in dbt cloud
 
 ## ci job
 when using/setting up ci jobs in dbt cloud we need to run a deploy job first since initially it has no runs to compare against unless you do so.
-Triggered by pull requests
-This feature is only available for dbt repositories connected through dbt Cloud's native integration with GitHub, Gitlab, or Azure DevOps
+ - Triggered by pull requests - This feature is only available for dbt repositories connected through dbt Cloud's native integration with GitHub, Gitlab, or Azure DevOps
+   - The default schema will be overridden as a temporary schema prefixed by `dbt_cloud_pr_`
+   - Run on draft pull request (Optionally run CI on draft PRs)
+the best way to get this working on a free/test account with github is to go to your [account settings](https://cloud.getdbt.com/settings/profile) and link github using oauth here 
 
 ### initial run
 ```
