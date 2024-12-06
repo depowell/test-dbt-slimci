@@ -32,6 +32,7 @@ when using/setting up ci jobs in dbt cloud we need to run a deploy job first to 
  - merge checks that need to materialise new models do so in `dbt_cloud_pr_` and once a PR is merged the `dbt_cloud_pr_` schema will be dropped
 - the CI job will not deploy changes into the environment it will only materialise things in `dbt_cloud_pr_` schema, another job must handle deployment
 - if a change was detected but not deployed into the target environment, additional CI checks will materialise the changes into the temp schema
+- the CI check will run on each new commit to an existing PR
 
 
 ### initial run (triggered manually using normal deploy job in dbt cloud)
