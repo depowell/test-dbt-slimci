@@ -22,6 +22,7 @@ when using/setting up ci jobs in dbt cloud we need to run a deploy job first sin
  - Triggered by pull requests - This feature is only available for dbt repositories connected through dbt Cloud's native integration with GitHub, Gitlab, or Azure DevOps
    - The default schema will be overridden as a temporary schema prefixed by `dbt_cloud_pr_`
    - Run on draft pull request (Optionally run CI on draft PRs)
+   - github will show merge checks on PR which look like: "Some checks haven’t completed yet: 1 pending check @dbt-cloud dbt Cloud Pending — dbt Cloud run pending"
 the best way to get this working on a free/test account with github is to go to your [account settings](https://cloud.getdbt.com/settings/profile) and link github using oauth here 
 
 ### initial run (triggered manually using normal deploy job in dbt cloud)
