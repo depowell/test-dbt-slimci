@@ -24,7 +24,7 @@ when using/setting up ci jobs in dbt cloud we need to run a deploy job first sin
    - Run on draft pull request (Optionally run CI on draft PRs)
 the best way to get this working on a free/test account with github is to go to your [account settings](https://cloud.getdbt.com/settings/profile) and link github using oauth here 
 
-### initial run
+### initial run (triggered manually using normal deploy job in dbt cloud)
 ```
 02:25:13  Running dbt...
 02:25:14  Unable to do partial parsing because saved manifest not found. Starting full parse.
@@ -55,3 +55,22 @@ the best way to get this working on a free/test account with github is to go to 
 02:25:23
 02:25:23  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
 ```
+
+### second run triggered by PR into default branch (dbt cloud CI job)
+```
+------------------------------------------------------------
+  Invoke dbt Command
+------------------------------------------------------------
+dbt build --select state:modified+
+
+03:06:48  Running dbt...
+03:06:49  Unable to do partial parsing because saved manifest not found. Starting full parse.
+03:06:51  Found 2 models, 4 data tests, 468 macros
+03:06:51  The selection criterion 'state:modified+' does not match any enabled nodes
+03:06:51  The selection criterion 'state:modified+' does not match any enabled nodes
+03:06:51  The selection criterion 'state:modified+' does not match any enabled nodes
+03:06:51
+03:06:51  Nothing to do. Try checking your model configs and model specification args
+```
+
+since dbt has identified no changed models from the repository it has nothing to do, nothing run in snowflake.
