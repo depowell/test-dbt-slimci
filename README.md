@@ -7,8 +7,17 @@ testing slimci/continuous integration setup in dbt cloud
 - note: concurrent ci checks are only available in team or enterprise editions for dbt cloud - we will not use it in this test
 - note: we will not be testing sql linting (team or enterprise) or sqlfluff in this test
 - [advanced ci](https://docs.getdbt.com/docs/deploy/advanced-ci) will *not be used* in this test (this is only available in enterprise editions). advanced ci enables comparing data changes between environments during ci
-  - prerequisities to advanced ci:
+  - prerequisites to advanced ci:
     - You have a dbt Cloud Enterprise account.
     - You have Advance CI features enabled.
     - You use a supported data platform: BigQuery, Databricks, Postgres, or Snowflake. Support for additional data platforms coming soon.
-  
+
+## data warehouse
+ - we will use snowflake cloud data warehouse hosted on aws
+ - setup (guide)[https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup]
+
+## project package management
+ - we will use pip to manage packages 
+ - PIP is a powerful package management system used to install and manage software packages and libraries written in Python. PIP stands for “Preferred Installer Program” or “Pip Installs Packages.” To use PIP, you must install Python on your Windows machine.
+ - ```python -m pip install dbt-core dbt-snowflake```
+
