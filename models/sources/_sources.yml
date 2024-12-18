@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: dp_data
+    database:  |
+      {%- if env_var('DBT_TARGET_ENV') == "dev" -%} ANALYTICS
+      {%- elif env_var('DBT_TARGET_ENV') == "stg" -%} STAGING_ANALYTICS
+      {%- elif env_var('DBT_TARGET_ENV') == "prod" -%} PROD_ANALYTICS
+      {%- else -%} ANALYTICS
+      {%- endif -%}
+    schema: BRONZE  
+    tables:
+      - name: DP_DATA
