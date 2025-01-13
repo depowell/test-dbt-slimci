@@ -1,5 +1,11 @@
+{{ config(
+    tags=["refined"]
+) }}
+
 with dpdata as (
-    select * from {{ source('dp_data','DP_DATA')}}
+
+    select * from {{ ref('src_dpdata')}}
+    
 )
+
 select * from dpdata
-where field1 = 1
