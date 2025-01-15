@@ -6,7 +6,8 @@ with dpdata as (
 
     select * from {{ ref('src_dpdata')}}
     where field1 = 1
-    and field2 = 'fff'
+    -- test comment
+    -- and field2 = 'fff'
     -- comment testing
     -- comment 2
     
